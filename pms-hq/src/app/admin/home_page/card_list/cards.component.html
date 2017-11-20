@@ -1,0 +1,10 @@
+<div class="main-cards-container">
+  <div class="main-cards-list">
+    <ng-container *ngFor="let item of list">
+      <div class="app-item" [@bounceInUpAnimation]>
+        <app-item  [data]="item"></app-item>
+        <main-child-panel [item]="item" [loading]="loading" [queryData]="queryData"></main-child-panel>
+      </div>
+    </ng-container>
+  </div>
+</div>

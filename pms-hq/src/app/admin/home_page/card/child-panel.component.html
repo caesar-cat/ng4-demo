@@ -1,0 +1,49 @@
+<div [ngSwitch]="item?.index">
+        <mat-expansion-panel expanded="true" *ngSwitchCase="1">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                <b>业务指标统计</b>
+                </mat-panel-title>
+                <mat-panel-description>
+                    查询次数与人数
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p class="current-query-count"> 
+                    <span>查询总次数：
+                        <b *ngIf="loading == false" class="color-active">{{queryData.queryCount}}</b>
+                        <app-loading *ngIf="loading == true"></app-loading>
+                    </span>
+                    <span>查询总人数：
+                        <b *ngIf="loading == false" class="color-active">{{queryData.queryPeopleCount}}</b>
+                        <app-loading *ngIf="loading == true"></app-loading>
+                    </span>
+            </p>
+        </mat-expansion-panel>
+        <mat-expansion-panel expanded="true" *ngSwitchCase="2">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                    <b>集群状态</b>
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        当前工作集群
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p class="current-query-count">
+                    <span>当前激活：
+                        <b *ngIf="queryData.hdDirection == 1 && loading == false" class="color-active">A集群</b>
+                        <b *ngIf="queryData.hdDirection == 0 && loading == false" class="color-active">B集群</b>
+                        <app-loading *ngIf="loading == true"></app-loading>
+                    </span>
+                </p>   
+            </mat-expansion-panel>
+        <mat-expansion-panel  *ngSwitchCase="3"> 
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                <b>离线分析</b>
+                </mat-panel-title>
+                <mat-panel-description>
+                    敬请期待
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+        </mat-expansion-panel>
+    </div>

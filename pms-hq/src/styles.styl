@@ -1,0 +1,30 @@
+
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+* 
+    box-sizing border-box
+*::-webkit-scrollbar
+    display: none;
+html, body, .site, app-root, mat-sidenav-container, .main-cards-container
+    width 100%
+    height 100%
+    margin 0
+.site
+    display flex
+    flex-direction: column
+
+main
+    flex: 1 
+
+.fill-line{ 
+    flex: 1 1 auto
+}
+app-login
+    width 100%
+    height 100%
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%)    
+    background #3f51b5 
+

@@ -1,0 +1,16 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="over" [opened]="isOpened" (close)="onNavClose()">
+        <app-slidenav (closeNav)="toggleNav($event)"></app-slidenav>
+    </mat-sidenav>
+    <div class="site">
+    <header>
+        <app-header (openNav)="toggleNav($event)"></app-header>
+    </header>
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+    <footer>
+        <app-footer></app-footer>
+    </footer>
+    </div>
+</mat-sidenav-container>

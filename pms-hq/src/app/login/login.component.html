@@ -1,0 +1,28 @@
+<div class="login-cards-container">
+    <div class="logo-img"></div>
+    <mat-card>
+      <mat-card-title>登录</mat-card-title>
+      <mat-card-content>
+        <form  [formGroup]="formOptions">
+          <div class="login-form-container">
+              <mat-form-field>
+                <input matInput [(ngModel)]="username"  placeholder="账号" formControlName="username">
+                <mat-error  *ngIf="formOptions.get('username').invalid">
+                  <strong>请输入账号</strong>
+                </mat-error>
+              </mat-form-field>
+              
+              <mat-form-field>
+                <input matInput [(ngModel)]="password" type="password" placeholder="密码" formControlName="password">
+                <mat-error *ngIf="formOptions.get('password').invalid">
+                  <strong>请输入密码</strong>
+                  </mat-error>
+              </mat-form-field>
+          </div>
+          <div class="login-btn">
+            <button mat-raised-button color="accent" (click)="login();false"><mat-icon>accessibility</mat-icon> 登录</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+</div>

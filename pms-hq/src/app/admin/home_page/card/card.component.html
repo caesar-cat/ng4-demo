@@ -1,0 +1,18 @@
+
+<mat-card class="main-card"  [@hoverScaleAnimation]="data.state" (mouseenter)="toggleState(data.state)" (mouseleave)="toggleState(data.state)">
+    <mat-card-header>
+        <mat-card-title>
+            {{data.title}}
+        </mat-card-title>
+    </mat-card-header>
+    <img class="mat-card-image" mat-card-image [src]="data.imgurl">
+    <mat-card-content>
+        {{data.description}}
+    </mat-card-content>
+    <mat-card-actions>
+        <a [href]="data.link" *ngIf="data.index != 3" mat-raised-button color="primary"><mat-icon>search</mat-icon>查看</a>
+        <button *ngIf="data.index == 3" mat-raised-button disabled><mat-icon>face</mat-icon>敬请期待</button>
+    </mat-card-actions>
+</mat-card>
+
+
