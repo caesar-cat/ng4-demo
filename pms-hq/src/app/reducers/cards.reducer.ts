@@ -1,10 +1,10 @@
 import { Action } from '@ngrx/store';
 import { ITEM } from '../admin/home_page/card.model'
 
-export const cardsReducer = (state: ITEM[], {type, payload}) => {
-    switch (type) {
+export function cardsReducer(state: ITEM[], action: Action) {
+    switch (action.type) {
       case 'FETCH_CARDS':
-      return [...payload];
+      return [...action.payload];
       default:
         return state;
     }

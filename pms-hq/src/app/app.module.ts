@@ -19,10 +19,10 @@ import { cardsReducer } from './reducers/cards.reducer'
     BrowserModule,
     BrowserAnimationsModule,
     CoreModule,
-    AppRoutingModule,
     StoreModule.provideStore({ 
       cards: cardsReducer
-     })
+    }),
+    AppRoutingModule,
   ],
   providers: [
     {
